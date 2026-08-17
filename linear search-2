@@ -1,36 +1,31 @@
-#include <iostream>
-using namespace std;
+def linear_search(arr, key):
+    for i in range(len(arr)):
+        if arr[i] == key:
+            return i
+    return -1
 
-int main() {
-    int n, key;
-    cout<<"enroll:92460118625"<<endl;
-    cout << "Enter the number of elements: ";
-    cin >> n;
 
-    int arr[n];
+n = int(input("Enter the number of elements: "))
 
-    cout << "Enter the elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
+arr = []
 
-    cout << "Enter the element to search: ";
-    cin >> key;
+print("Enter", n, "elements:")
+for i in range(n):
+    arr.append(int(input()))
 
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key) {
-            cout << "Element found at index " << i << endl;
-            return 0;
-        }
-    }
+key = int(input("Enter the element to search: "))
 
-    cout << "Element not found." << endl;
+result = linear_search(arr, key)
 
-    return 0;
-}
-output:
-enroll:92460118625
-Enter the number of elements: 5
-Enter the elements: 22 36 2 1 17
-Enter the element to search: 2
-Element found at index 2
+if result != -1:
+    print("Element found at position:", result + 1)
+else:
+    print("Element not found")
+
+print("\nTime Complexity:")
+print("Best Case: O(1)")
+print("Average Case: O(n)")
+print("Worst Case: O(n)")
+print("Space Complexity: O(1)")
+
+print("\nEnrollment Number: 92460118625")
